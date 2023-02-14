@@ -33,7 +33,7 @@ def df_analysis(csv_name: str):
       ED_song = str(df.loc[df.Artist == e, 'Song'])
       if ED_song not in songs_by_ES:
         songs_by_ES.append(ED_song)
-  with open('analysis_spotify_top_songs.json', 'w') as f:
+  with open('Spotify_analysis_results.json', 'w') as f:
     json.dump('All songs by Ed Sheeran: ', f)
     f.write('\n')
     json.dump(songs_by_ES, f, indent=2)
@@ -63,7 +63,7 @@ def df_analysis(csv_name: str):
   #total number of streams per artist 
   streams_per_artist = df.groupby('Artist')['Streams (Billions)'].sum()
   streams_per_artist = streams_per_artist.to_json(orient = 'index', indent = 3)
-  with open('analysis_spotify_top_songs.json', 'a') as f:
+  with open('Spotify_analysis_results.json', 'a') as f:
           f.write('\n')
           json.dump('Total number of streams per artist: ', f)
           f.write('\n') 

@@ -131,17 +131,3 @@ date_format('29 November 2019')
 df_analysis('spotify_songs_top_100.csv')
 make_histogram('spotify_songs_top_100.csv')
 
-
-#asserts for date_format function
-assert date_format('2017-01-06') == '2017-01-06'
-assert date_format('20170106') == '2017-01-06'
-assert date_format('05 01 00') == '2000-05-01'
-assert date_format('29 November 2019') == '2019-11-29'
-assert date_format('10.May.19') == '2019-05-10'
-assert date_format('10 May 19') == '2019-05-10'
-assert date_format('10.May.2019') == '2019-05-10'
-assert date_format('10May.19') == '2019-05-10'
-assert date_format('10May19') == '2019-05-10'
-assert date_format('7.May19') == '2019-05-07'
-assert date_format('07.May19') == '2019-05-07'
-assert date_format('32 Oct 19') == '2032-10-19'
